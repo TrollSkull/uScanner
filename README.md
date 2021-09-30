@@ -39,7 +39,7 @@ $ bash uscanner.sh
 
 To get a list of all options and switches use the `--help` command.
 
-    Usage: uscanner [username] or [-h] [-s] [-a] [-u]
+    Usage: uscanner [username] or [-h] [-s] [-a]
 
         -h, --help              Print this help menu
         -s, --save              Save the .txt file in the storage
