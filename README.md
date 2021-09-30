@@ -35,8 +35,6 @@ $ chmod 777 uscanner.sh
 $ bash uscanner.sh
 ```
 
-*__Note:__ Curl is required for running uScanner.*
-
 ## USAGE
 
 To get a list of all options and switches use the `--help` command.
