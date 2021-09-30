@@ -125,7 +125,6 @@ elif [ "$1" == "--help" ]||[ "$1" == "-h" ]; then
     echo "    -h, --help              Print this help menu"
     echo "    -s, --save              Save the .txt file in the storage"
     echo "    -a, --about             Print information about this program"
-    echo "    -u, --update            Update this tool automatically"
     echo "        --uninstall         Uninstall the tool"
     echo
     echo "Report bugs to (t.me/TrollSkull)"
@@ -138,13 +137,6 @@ elif [ "$1" == "--save" ]||[ "$1" == "-s" ]; then
 
     print_banner
     save_file
-    exit
-
-elif [ "$1" == "--update" ]||[ "$1" == "-u" ]; then # POR TERMINAR
-
-    # actualizar la herramienta automáticamente
-
-    echo ""
     exit
 
 elif [ "$1" == "--uninstall" ]; then
