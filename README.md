@@ -1,4 +1,5 @@
-image here
+<p align="left">
+<img src="/resources/uscanner.jpg" width="500" height="200"/>
 
 [![Version](https://img.shields.io/badge/Version-0.1%2020210930-green)]()
 [![Bash](https://img.shields.io/badge/Made%20with-Bash-blue)]()
