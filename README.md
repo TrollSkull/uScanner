@@ -4,7 +4,7 @@ image here
 [![Bash](https://img.shields.io/badge/Made%20with-Bash-blue)]()
 [![License](https://img.shields.io/badge/License-GPL%203.0-yellow)]()
 
-uScanner is a tool to find usernames on various pages throughout the entire internet, written by **[TrollSkull](https://github.com/TrollSkull)** (**[@ImTrollSkull](https://twitter.com/ImTrollSkull)**), each name found is saved in a .txt file which you can move to your main device folder!
+uScanner is a tool to find usernames on various pages throughout the entire internet, written by **[TrollSkull](https://github.com/TrollSkull)** (**[@ImTrollSkull](https://twitter.com/ImTrollSkull)**), each name found is saved in a `.txt` file which you can move to your main device folder!
 
 
 ## SCREENSHOT
