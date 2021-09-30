@@ -17,6 +17,7 @@ screenshot here
 It motivates me to keep updating this program.
 
 > **Bitcoin Wallet:** bc1q58khxn5qxq4v2vc2z9sjgjzwtakr2cv8lgqnm9 </br>
+> **Ethereum Wallet:** 0x8E7F4e431a73204376E7489072C551DE4644ed3F
 
 ## INSTALLATION
 
