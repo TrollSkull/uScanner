@@ -120,7 +120,7 @@ elif [ "$1" == "--help" ]||[ "$1" == "-h" ]; then
     # Help menu.
 
     print_banner
-    echo "Usage: uscanner [username] or [-h] [-s] [-a] [-u]"
+    echo "Usage: uscanner [username] or [-h] [-s] [-a]"
     echo
     echo "    -h, --help              Print this help menu"
     echo "    -s, --save              Save the .txt file in the storage"
