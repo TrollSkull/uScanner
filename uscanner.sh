@@ -427,11 +427,11 @@ function scan_username() {
 
     check_canva=$(curl -s -i "https://www.canva.com/$username" -H "Accept-Language: en" -L | grep -o 'HTTP/2 404 ' ; echo $?)
 
-    if [[ $check1 == *'1'* ]] ; then 
+    if [[ $check_canva == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Canva: ${GRE}Found! ${W}- https://www.canva.com/$username"
         echo "https://www.canva.com/$username" >> ${username}.txt
 
-    elif [[ $check1 == *'0'* ]]; then 
+    elif [[ $check_canva == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Canva: ${Y}Not Found!"
 
     fi
