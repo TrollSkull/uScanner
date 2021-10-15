@@ -76,7 +76,7 @@ function removing_file() {
 
 }
 
-function check_wifi_connection() { # TO TEST.
+function check_wifi_connection() {
 
     # Checking WiFi connection.
 
@@ -85,7 +85,8 @@ function check_wifi_connection() { # TO TEST.
     source $HOME/uScanner/core/wifi_connection.sh
 
     if [ $wifi == "0" ]; then
-        echo "Please, check your internet connection."
+        echo -e ${R}"[!] ${W}Please, check your internet connection."
+        echo
         exit
     fi
     cd $HOME/uScanner/usernames
@@ -182,7 +183,7 @@ elif [ "$1" == "--save" ]||[ "$1" == "-s" ]; then
     save_file
     exit
 
-elif [ "$1" == "--update" ]||[ "$1" == "-u" ]; then # TO TEST.
+elif [ "$1" == "--update" ]||[ "$1" == "-u" ]; then
 
     # Removing the old uScanner version.
 
