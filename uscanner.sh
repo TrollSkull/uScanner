@@ -46,7 +46,7 @@ function stop_session() {
     echo -e ${B}"/ // /\ \/ __/ _  / _ \/ _ \/ -_) __/                 "
     echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.2-20211015"
     echo 
-    echo -e ${GRE}"[+] uScanner: ${W}Session closed."
+    echo -e ${GRE}"[+] ${W}uScanner: Session closed."
     echo
 }
 
