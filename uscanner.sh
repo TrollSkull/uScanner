@@ -87,9 +87,6 @@ function check_wifi_connection() { # TO TEST.
         echo "Please, check your internet connection."
         exit
     fi
-
-    echo -e "#!/bin/bash" > $HOME/uScanner/core/wifi_connection.sh
-    echo -e "export wifi=''" >> $HOME/uScanner/core/wifi_connection.sh
     cd $HOME/uScanner/usernames
 }
 
