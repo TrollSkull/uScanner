@@ -79,7 +79,8 @@ function removing_file() {
 function check_wifi_connection() { # TO TEST.
 
     # Checking WiFi connection.
-
+    
+    cd $HOME/uScanner/core
     python wifi.py
     source $HOME/uScanner/core/.wifi_connection.sh
     if [ wifi == "0" ]; then
