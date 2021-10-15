@@ -85,10 +85,6 @@ function check_wifi_connection() { # TO TEST.
     source $HOME/uScanner/core/wifi_connection.sh
     if [ wifi == "0" ]; then
         echo "Please, check your internet connection."
-
-        echo -e "#!/bin/bash" > $HOME/uScanner/core/wifi_connection.sh
-        echo -e "export wifi=''" >> $HOME/uScanner/core/wifi_connection.sh
-
         exit
     fi
 
