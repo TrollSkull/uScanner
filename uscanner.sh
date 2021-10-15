@@ -79,7 +79,7 @@ function removing_file() {
 function check_wifi_connection() { # TO TEST.
 
     # Checking WiFi connection.
-    
+
     cd $HOME/uScanner/core
     python wifi.py
     source $HOME/uScanner/core/.wifi_connection.sh
@@ -94,6 +94,7 @@ function check_wifi_connection() { # TO TEST.
 
     echo -e "#!/bin/bash" > $HOME/uScanner/core/.wifi_connection.sh
     echo -e "export wifi=''" >> $HOME/uScanner/core/.wifi_connection.sh
+    cd $HOME/uScanner/usernames
 }
 
 function change_last_username() {
@@ -243,8 +244,8 @@ fi
 
 function scan_username() {
 
-    cd $HOME/uScanner/usernames
     check_wifi_connection
+    cd $HOME/uScanner/usernames
     change_last_username
     removing_file
 
