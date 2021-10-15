@@ -37,6 +37,7 @@ To get a list of all options and switches use the `--help` command.
         -h, --help              Print this help menu
         -s, --save              Save the .txt file in the storage
         -a, --about             Print information about this program
+        -u, --update            Update this tool automatically
             --uninstall         Uninstall the tool
 
     Report bugs to (t.me/TrollSkull)
