@@ -2,7 +2,7 @@
 
 # Name: uScanner (Username Scanner Tool)
 # GitHub: https://github.com/TrollSkull/uScanner
-# Version: v0.2-
+# Version: v0.2-20211015
 
 # Scanning up to 20 social networks!
 
@@ -32,7 +32,7 @@ function print_banner() {
     echo -e ${B}"       ____                                           "
     echo -e ${B}" __ __/ __/______ ____  ___  ___ ____                 " 
     echo -e ${B}"/ // /\ \/ __/ _  / _ \/ _ \/ -_) __/                 "
-    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.2-"
+    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.2-20211015"
     echo 
 }
 
@@ -44,7 +44,7 @@ function stop_session() {
     echo -e ${B}"       ____                                           "
     echo -e ${B}" __ __/ __/______ ____  ___  ___ ____                 " 
     echo -e ${B}"/ // /\ \/ __/ _  / _ \/ _ \/ -_) __/                 "
-    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.2-"
+    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.2-20211015"
     echo 
     echo -e ${GRE}"[+] uScanner: ${W}Session closed."
     echo
@@ -229,7 +229,7 @@ elif [ "$1" == "--about" ]||[ "$1" == "-a" ]; then
     print_banner
     echo "Name:     uScanner"
     echo "Author:   TrollSkull"
-    echo "Version:  v0.2-"
+    echo "Version:  v0.2-20211015"
     echo
     echo "Contact:   trollskull.contact@gmail.com"
     echo "Follow me: https://github.com/TrollSkull"
