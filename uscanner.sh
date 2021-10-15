@@ -54,7 +54,7 @@ function save_file() {
 
     # Saving the .txt file in internal storage.
 
-    source $HOME/uScanner/usernames/.last_username.sh
+    source $HOME/uScanner/usernames/last_username.sh
     cd $HOME/uScanner/usernames
 
     if [[ -e $last_username.txt ]]; then
@@ -82,24 +82,24 @@ function check_wifi_connection() { # TO TEST.
 
     cd $HOME/uScanner/core
     python wifi.py
-    source $HOME/uScanner/core/.wifi_connection.sh
+    source $HOME/uScanner/core/wifi_connection.sh
     if [ wifi == "0" ]; then
         echo "Please, check your internet connection."
 
-        echo -e "#!/bin/bash" > $HOME/uScanner/core/.wifi_connection.sh
-        echo -e "export wifi=''" >> $HOME/uScanner/core/.wifi_connection.sh
+        echo -e "#!/bin/bash" > $HOME/uScanner/core/wifi_connection.sh
+        echo -e "export wifi=''" >> $HOME/uScanner/core/wifi_connection.sh
 
         exit
     fi
 
-    echo -e "#!/bin/bash" > $HOME/uScanner/core/.wifi_connection.sh
-    echo -e "export wifi=''" >> $HOME/uScanner/core/.wifi_connection.sh
+    echo -e "#!/bin/bash" > $HOME/uScanner/core/wifi_connection.sh
+    echo -e "export wifi=''" >> $HOME/uScanner/core/wifi_connection.sh
     cd $HOME/uScanner/usernames
 }
 
 function change_last_username() {
-    echo -e "#!/bin/bash" > $HOME/uScanner/usernames/.last_username.sh
-	echo -e "export last_username='${username}'" >> $HOME/uScanner/usernames/.last_username.sh
+    echo -e "#!/bin/bash" > $HOME/uScanner/usernames/last_username.sh
+	echo -e "export last_username='${username}'" >> $HOME/uScanner/usernames/last_username.sh
 }
 
 function dependencies () {
