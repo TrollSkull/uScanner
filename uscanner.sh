@@ -83,7 +83,8 @@ function check_wifi_connection() { # TO TEST.
     cd $HOME/uScanner/core
     python wifi.py
     source $HOME/uScanner/core/wifi_connection.sh
-    if [ wifi == "0" ]; then
+
+    if [ $wifi == "0" ]; then
         echo "Please, check your internet connection."
         exit
     fi
