@@ -17,13 +17,11 @@ uScanner is a tool to find usernames on various pages throughout the entire inte
 You can download uScanner on any platform by cloning the official Git repository:
 
 ```bash
-$ pkg install -y git 
+$ pkg install -y git python
 
 $ git clone https://github.com/TrollSkull/uScanner
 
 $ cd uScanner
-    
-$ chmod 777 uscanner.sh
     
 $ bash uscanner.sh
 ```
