@@ -1,5 +1,5 @@
 <p align="left">
-<img src="/resources/uscanner.png" width="400" height="200"/>
+<img src="/resources/logo.png" width="400" height="200"/>
 
 [![Version](https://img.shields.io/badge/Version-0.2%2020211015-blue)]()
 [![Bash](https://img.shields.io/badge/Made%20with-Bash-green)]()
@@ -10,7 +10,7 @@ uScanner is a tool to find usernames on various pages throughout the entire inte
 
 ## SCREENSHOTS
 
-<img src="/resources/screenshot.jpg" width="500" height="200"/>
+<img src="/resources/uscanner-screenshot.jpg" width="500" height="200"/>
 
 ## INSTALLATION
 
