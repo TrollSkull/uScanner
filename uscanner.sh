@@ -2,29 +2,12 @@
 
 # Name: uScanner (Username Scanner Tool)
 # GitHub: https://github.com/TrollSkull/uScanner
-# Version: v0.2-20211015
+# Version: v0.3-20211020
 
-# Scanning up to 20 social networks!
+# Scanning up to 25 social networks!
 
 trap 'echo "";stop_session;exit 1' 2
-
-# Variables and routes.
-
-PWD=$(pwd)
-SYSTEM=$(uname -o)
-HOME="/data/data/com.termux/files/home"
-USR="/data/data/com.termux/files/usr"
-DATE=$(date)
-
-# Colors.
-
-R='\033[31m'
-GRE='\033[32m'
-W='\033[37m'
-B='\033[34m'
-GRA='\033[1;30m'
-Y='\033[1;33m'
-C='\033[1;36m'
+source $HOME/uScanner/core/variables.sh
 
 function print_banner() {
 
@@ -32,7 +15,7 @@ function print_banner() {
     echo -e ${B}"       ____                                           "
     echo -e ${B}" __ __/ __/______ ____  ___  ___ ____                 " 
     echo -e ${B}"/ // /\ \/ __/ _  / _ \/ _ \/ -_) __/                 "
-    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.2-20211015"
+    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.3-20211020"
     echo 
 }
 
@@ -44,7 +27,7 @@ function stop_session() {
     echo -e ${B}"       ____                                           "
     echo -e ${B}" __ __/ __/______ ____  ___  ___ ____                 " 
     echo -e ${B}"/ // /\ \/ __/ _  / _ \/ _ \/ -_) __/                 "
-    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.2-20211015"
+    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.3-20211020"
     echo 
     echo -e ${GRE}"[+] ${W}uScanner: Session closed."
     echo
@@ -184,6 +167,10 @@ elif [ "$1" == "--save" ]||[ "$1" == "-s" ]; then
     exit
 
 elif [ "$1" == "--update" ]||[ "$1" == "-u" ]; then
+    
+    # Checking wifi connection.
+
+    check_wifi_connection
 
     # Removing the old uScanner version.
 
@@ -226,7 +213,7 @@ elif [ "$1" == "--about" ]||[ "$1" == "-a" ]; then
     print_banner
     echo "Name:     uScanner"
     echo "Author:   TrollSkull"
-    echo "Version:  v0.2-20211015"
+    echo "Version:  v0.3-20211020"
     echo
     echo "Contact:   trollskull.contact@gmail.com"
     echo "Follow me: https://github.com/TrollSkull"
@@ -263,7 +250,7 @@ function scan_username() {
 
     if [[ $check_instagram == *'1'* ]]; then
         echo -e ${GRE}"[+] ${W}Instagram: ${GRE}Found! ${W}- https://www.instagram.com/${username}"
-        echo "[LOG] https://www.instagram.com/${username}" >> ${username}.txt
+        echo "[Instagram] https://www.instagram.com/${username}" >> ${username}.txt
 
 
     elif [[ $check_instagram == *'0'* ]]; then
@@ -277,7 +264,7 @@ function scan_username() {
 
     if [[ $check_facebook == *'1'* ]]; then
         echo -e ${GRE}"[+] ${W}Facebook: ${GRE}Found! ${W}- https://www.facebook.com/${username}"
-        echo "[LOG] https://www.facebook.com/${username}" >> ${username}.txt
+        echo "[Facebook] https://www.facebook.com/${username}" >> ${username}.txt
 
     elif [[ $check_facebook == *'0'* ]]; then
         echo -e ${Y}"[-] ${W}Facebook: ${Y}Not Found!"
@@ -290,7 +277,7 @@ function scan_username() {
 
     if [[ $check_twitter == *'1'* ]]; then
         echo -e ${GRE}"[+] ${W}Twitter: ${GRE}Found! ${W}- https://www.twitter.com/${username}"
-        echo "[LOG] https://www.twitter.com/${username}" >> ${username}.txt
+        echo "[Twitter] https://www.twitter.com/${username}" >> ${username}.txt
 
     elif [[ $check_twitter == *'0'* ]]; then
         echo -e ${Y}"[-] ${W}Twitter: ${Y}Not Found!"
@@ -303,7 +290,7 @@ function scan_username() {
 
     if [[ $check_youtube == *'1'* ]]; then
         echo -e ${GRE}"[+] ${W}YouTube: ${GRE}Found! ${W}- https://www.youtube.com/${username}"
-        echo "[LOG] https://www.youtube.com/${username}" >> ${username}.txt
+        echo "[YouTube] https://www.youtube.com/${username}" >> ${username}.txt
 
     elif [[ $check_youtube == *'0'* ]]; then
         echo -e ${Y}"[-] ${W}Youtube: ${Y}Not Found!"
@@ -316,7 +303,7 @@ function scan_username() {
 
     if [[ $check_reddit == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Reddit: ${GRE}Found! ${W}- https://www.reddit.com/${username}"
-        echo "[LOG] https://www.reddit.com/${username}" >> ${username}.txt
+        echo "[Reddit] https://www.reddit.com/${username}" >> ${username}.txt
 
     elif [[ $check_reddit == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Reddit: ${Y}Not Found!"
@@ -329,7 +316,7 @@ function scan_username() {
 
     if [[ $check_github == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}GitHub: ${GRE}Found! ${W}- https://www.github.com/${username}"
-        echo "[LOG] https://www.github.com/${username}" >> ${username}.txt
+        echo "[GitHub] https://www.github.com/${username}" >> ${username}.txt
 
     elif [[ $check_github == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}GitHub: ${Y}Not Found!"
@@ -342,7 +329,7 @@ function scan_username() {
 
     if [[ $check_steam == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Steam: ${GRE}Found! ${W}- https://www.steamcommunity.com/id/${username}"
-        echo "[LOG] https://www.steamcommunity.com/id/${username}" >> ${username}.txt
+        echo "[Steam] https://www.steamcommunity.com/id/${username}" >> ${username}.txt
 
     elif [[ $check_steam1 == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Steam: ${Y}Not Found!"
@@ -355,7 +342,7 @@ function scan_username() {
 
     if [[ $check_pinterest == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Pinterest: ${GRE}Found! ${W}- https://www.pinterest.com/${username}"
-        echo "[LOG] https://www.pinterest.com/${username}" >> ${username}.txt
+        echo "[Pinterest] https://www.pinterest.com/${username}" >> ${username}.txt
 
     elif [[ $check_pinterest == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Pinterest: ${Y}Not Found!"
@@ -368,7 +355,7 @@ function scan_username() {
 
     if [[ $check_soundcloud == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}SoundCloud: ${GRE}Found! ${W}- https://www.soundcloud.com/${username}"
-        echo "[LOG] https://www.soundcloud.com/${username}" >> ${username}.txt
+        echo "[SoundCloud] https://www.soundcloud.com/${username}" >> ${username}.txt
 
     elif [[ $check_soundcloud == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}SoundCloud: ${Y}Not Found!"
@@ -381,7 +368,7 @@ function scan_username() {
 
     if [[ $check_spotify == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Spotify: ${GRE}Found! ${W}- https://open.spotify.com/user/${username}"
-        echo "[LOG] https://open.spotify.com/user/${username}" >> ${username}.txt
+        echo "[Spotify] https://open.spotify.com/user/${username}" >> ${username}.txt
 
     elif [[ $check_spotify == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Spotify: ${Y}Not Found!"
@@ -394,7 +381,7 @@ function scan_username() {
 
     if [[ $check_devianart == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}DevianArt: ${GRE}Found! ${W}- https://$username.deviantart.com"
-        echo "[LOG] https://$username.deviantart.com" >> ${username}.txt
+        echo "[DevianArt] https://$username.deviantart.com" >> ${username}.txt
 
     elif [[ $check_devianart == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}DevianArt: ${Y}Not Found!"
@@ -407,7 +394,7 @@ function scan_username() {
 
     if [[ $check_badoo == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Badoo: ${GRE}Found! ${W}- https://www.badoo.com/en/$username"
-        echo "[LOG] https://www.badoo.com/en/$username" >> ${username}.txt
+        echo "[Badoo] https://www.badoo.com/en/$username" >> ${username}.txt
 
     elif [[ $check_badoo == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Badoo: ${Y}Not Found!"
@@ -420,7 +407,7 @@ function scan_username() {
 
     if [[ $check_patreon == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Patreon: ${GRE}Found! ${W}- https://www.patreon.com/$username"
-        echo "[LOG] https://www.patreon.com/$username" >> ${username}.txt
+        echo "[Patreon] https://www.patreon.com/$username" >> ${username}.txt
 
     elif [[ $check_patreon == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Patreon: ${Y}Not Found!"
@@ -433,7 +420,7 @@ function scan_username() {
 
     if [[ $check_kongregate == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Kongregate: ${GRE}Found! ${W}- https://kongregate.com/accounts/$username"
-        echo "[LOG] https://kongregate.com/accounts/$username" >> ${username}.txt
+        echo "[Kongregate] https://kongregate.com/accounts/$username" >> ${username}.txt
 
     elif [[ $check_kongregate == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Kongregate: ${Y}Not Found!"
@@ -446,7 +433,7 @@ function scan_username() {
 
     if [[ $check_pastebin == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Pastebin: ${GRE}Found! ${W}- https://pastebin.com/u/$username"
-        echo "[LOG] https://pastebin.com/u/$username" >> ${username}.txt
+        echo "[Pastebin] https://pastebin.com/u/$username" >> ${username}.txt
 
     elif [[ $check_pastebin == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Pastebin: ${Y}Not Found!"
@@ -459,7 +446,7 @@ function scan_username() {
 
     if [[ $check_roblox == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Roblox: ${GRE}Found! ${W}- https://www.roblox.com/user.aspx?username=$username"
-        echo "[LOG] https://www.roblox.com/user.aspx?username=$username" >> ${username}.txt
+        echo "[Roblox] https://www.roblox.com/user.aspx?username=$username" >> ${username}.txt
 
     elif [[ $check_roblox == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Roblox: ${Y}Not Found!"
@@ -472,7 +459,7 @@ function scan_username() {
 
     if [[ $check_newgrounds == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Newgrounds: ${GRE}Found! ${W}- https://$username.newgrounds.com"
-        echo "[LOG] https://$username.newgrounds.com" >> ${username}.txt
+        echo "[Newgrounds] https://$username.newgrounds.com" >> ${username}.txt
 
     elif [[ $check_newgrounds == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Newgrounds: ${Y}Not Found!"
@@ -485,7 +472,7 @@ function scan_username() {
 
     if [[ $check_wattpad == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Wattpad: ${GRE}Found! ${W}- https://www.wattpad.com/user/$username"
-        echo "[LOG] https://www.wattpad.com/user/$username" >> ${username}.txt
+        echo "[Wattpad] https://www.wattpad.com/user/$username" >> ${username}.txt
 
     elif [[ $check_wattpad == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Wattpad: ${Y}Not Found!"
@@ -498,10 +485,75 @@ function scan_username() {
 
     if [[ $check_canva == *'1'* ]] ; then 
         echo -e ${GRE}"[+] ${W}Canva: ${GRE}Found! ${W}- https://www.canva.com/$username"
-        echo "[LOG] https://www.canva.com/$username" >> ${username}.txt
+        echo "[Canva] https://www.canva.com/$username" >> ${username}.txt
 
     elif [[ $check_canva == *'0'* ]]; then 
         echo -e ${Y}"[-] ${W}Canva: ${Y}Not Found!"
+
+    fi
+
+    # Checking Wikipedia username.
+
+    check_wikipedia=$(curl -s -i "https://www.wikipedia.org/wiki/User:$username" -H "Accept-Language: en" -L | grep -o 'HTTP/2 404' ; echo $?)
+
+    if [[ $check_wikipedia == *'1'* ]] ; then 
+        echo -e ${GRE}"[+] ${W}Wikipedia: ${GRE}Found! ${W}- https://www.wikipedia.org/wiki/User:$username"
+        echo "[Wikipedia] https://www.wikipedia.org/wiki/User:$username" >> ${username}.txt
+
+    elif [[ $check_wikipedia == *'0'* ]]; then 
+        echo -e ${Y}"[-] ${W}Wikipedia: ${Y}Not Found!"
+
+    fi
+
+    # Checking Ebay username.
+
+    check_ebay=$(curl -s -i "https://www.ebay.com/usr/$username" -H "Accept-Language: en" -L | grep -o 'HTTP/2 404\|404 Not Found\|eBay Profile - error' ; echo $?)
+
+    if [[ $check_ebay == *'1'* ]] ; then 
+        echo -e ${GRE}"[+] ${W}Ebay: ${GRE}Found! ${W}- https://www.ebay.com/usr/$username"
+        echo "[Ebay] https://www.ebay.com/usr/$username" >> ${username}.txt
+
+    elif [[ $check_ebay == *'0'* ]]; then 
+        echo -e ${Y}"[-] ${W}Ebay: ${Y}Not Found!"
+
+    fi
+
+    # Checking Codecademy username.
+
+    check_codecademy=$(curl -s -i "https://www.codecademy.com/$username" -H "Accept-Language: en" -L | grep -o 'HTTP/2 404' ; echo $?)
+
+    if [[ $check_codecademy == *'1'* ]] ; then 
+        echo -e ${GRE}"[+] ${W}Codecademy: ${GRE}Found! ${W}- https://www.codecademy.com/$username"
+        echo "[Codecademy] https://www.codecademy.com/$username" >> ${username}.txt
+
+    elif [[ $check_codecademy == *'0'* ]]; then 
+        echo -e ${Y}"[-] ${W}Codecademy: ${Y}Not Found!"
+
+    fi
+
+    # Checking BitBucket username.
+
+    check_bitbucket=$(curl -s -i "https://bitbucket.org/$username" -H "Accept-Language: en" -L | grep -o 'HTTP/2 404' ; echo $?)
+
+    if [[ $check_bitbucket == *'1'* ]] ; then 
+        echo -e ${GRE}"[+] ${W}BitBucket: ${GRE}Found! ${W}- https://bitbucket.org/$username"
+        echo "[BitBucket] https://bitbucket.org/$username" >> ${username}.txt
+
+    elif [[ $check_bitbucket == *'0'* ]]; then 
+        echo -e ${Y}"[-] ${W}BitBucket: ${Y}Not Found!"
+
+    fi
+
+    # Checking MixCloud username.
+
+    check_mixcloud=$(curl -s -i "https://www.mixcloud.com/$username" -H "Accept-Language: en" -L | grep -o 'error-message' ; echo $?)
+
+    if [[ $check_mixcloud == *'1'* ]] ; then 
+        echo -e ${GRE}"[+] ${W}MixCloud: ${GRE}Found! ${W}- https://www.mixcloud.com/$username"
+        echo "[MixCloud] https://www.mixcloud.com/$username" >> ${username}.txt
+
+    elif [[ $check_mixcloud == *'0'* ]]; then 
+        echo -e ${Y}"[-] ${W}MixCloud: ${Y}Not Found!"
 
     fi
 
