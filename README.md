@@ -10,7 +10,7 @@ uScanner is a tool to find usernames on various pages throughout the entire inte
 
 ## SCREENSHOTS
 
-<img src="/resources/uscanner-screenshot.jpg" width="500" height="200"/>
+<img src="/resources/uscanner-screenshot.jpg" width="500" height="250"/>
 
 ## INSTALLATION
 
