@@ -1,7 +1,7 @@
 <p align="left">
 <img src="/resources/logo.png" width="400" height="200"/>
 
-[![Version](https://img.shields.io/badge/Version-0.3%2020211020-blue)]()
+[![Version](https://img.shields.io/badge/Version-0.4%2020211114-blue)]()
 [![Bash](https://img.shields.io/badge/Made%20with-Bash-green)]()
 [![License](https://img.shields.io/badge/License-GPL%203.0-yellow)]()
 
