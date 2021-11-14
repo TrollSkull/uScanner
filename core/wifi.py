@@ -3,12 +3,12 @@ from socket import gethostbyname, create_connection, error
 def writeFile_1():
     file = open("wifi_connection.sh", "w")
     file.write("""#!/bin/bash
-export wifi='1'""")
+export wifi='true'""")
 
 def writeFile_0():
     file = open("wifi_connection.sh", "w")
     file.write("""#!/bin/bash
-export wifi='0'""")
+export wifi='false'""")
 
 def checkWifi():
     try:
