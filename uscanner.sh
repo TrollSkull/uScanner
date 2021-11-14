@@ -183,7 +183,7 @@ elif [ "$1" == "--update" ]||[ "$1" == "-u" ]; then
     cd uScanner
     chmod 777 uscanner.sh
     print_banner
-    echo -e "[+] uScanner: The tool has been successfully updated."
+    echo -e ${GRE}"[+] uScanner: The tool has been successfully updated."
     exit
 
 elif [ "$1" == "--about" ]||[ "$1" == "-a" ]; then
