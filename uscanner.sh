@@ -2,7 +2,7 @@
 
 # Name: uScanner (Username Scanner Tool)
 # GitHub: https://github.com/TrollSkull/uScanner
-# Version: v0.3-20211020
+# Version: v0.4-20211114
 
 # Scanning up to 25 social networks!
 
@@ -15,7 +15,7 @@ function print_banner() {
     echo -e ${B}"       ____                                           "
     echo -e ${B}" __ __/ __/______ ____  ___  ___ ____                 " 
     echo -e ${B}"/ // /\ \/ __/ _  / _ \/ _ \/ -_) __/                 "
-    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.3-20211020"
+    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.4-20211114"
     echo 
 }
 
@@ -27,7 +27,7 @@ function stop_session() {
     echo -e ${B}"       ____                                           "
     echo -e ${B}" __ __/ __/______ ____  ___  ___ ____                 " 
     echo -e ${B}"/ // /\ \/ __/ _  / _ \/ _ \/ -_) __/                 "
-    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.3-20211020"
+    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.4-20211114"
     echo 
     echo -e ${GRE}"[+] ${W}uScanner: Session closed."
     echo
@@ -67,7 +67,7 @@ function check_wifi_connection() {
     python wifi.py
     source $HOME/uScanner/core/wifi_connection.sh
 
-    if [ $wifi == "0" ]; then
+    if [ $wifi == "false" ]; then
         echo -e ${R}"[!] ${W}Please, check your internet connection."
         echo
         exit
@@ -182,7 +182,22 @@ elif [ "$1" == "--update" ]||[ "$1" == "-u" ]; then
     git clone https://github.com/TrollSkull/uScanner
     cd uScanner
     chmod 777 uscanner.sh
-    bash uscanner.sh
+    print_banner
+    echo -e "[+] uScanner: The tool has been successfully updated."
+    exit
+
+elif [ "$1" == "--about" ]||[ "$1" == "-a" ]; then
+
+    # About the program.
+
+    print_banner
+    echo "Name:     uScanner"
+    echo "Author:   TrollSkull"
+    echo "Version:  v0.4-20211114"
+    echo
+    echo "Contact:   trollskull.contact@gmail.com"
+    echo "Follow me: https://github.com/TrollSkull"
+    echo
     exit
 
 elif [ "$1" == "--uninstall" ]; then
@@ -206,22 +221,21 @@ elif [ "$1" == "--uninstall" ]; then
     echo
     exit
     
-elif [ "$1" == "--about" ]||[ "$1" == "-a" ]; then
-
-    # About the program.
+else
+    # Help menu.
 
     print_banner
-    echo "Name:     uScanner"
-    echo "Author:   TrollSkull"
-    echo "Version:  v0.3-20211020"
+    echo "Usage: uscanner [username] or [-h] [-s] [-a] [-u]"
     echo
-    echo "Contact:   trollskull.contact@gmail.com"
-    echo "Follow me: https://github.com/TrollSkull"
+    echo "    -h, --help              Print this help menu"
+    echo "    -s, --save              Save the .txt file in the storage"
+    echo "    -a, --about             Print information about this program"
+    echo "    -u, --update            Update this tool automatically"
+    echo "        --uninstall         Uninstall the tool"
+    echo
+    echo "Report bugs to (t.me/TrollSkull)"
     echo
     exit
-
-else
-    username=$1
 fi
 
 function scan_username() {
