@@ -222,20 +222,7 @@ elif [ "$1" == "--uninstall" ]; then
     exit
     
 else
-    # Help menu.
-
-    print_banner
-    echo "Usage: uscanner [username] or [-h] [-s] [-a] [-u]"
-    echo
-    echo "    -h, --help              Print this help menu"
-    echo "    -s, --save              Save the .txt file in the storage"
-    echo "    -a, --about             Print information about this program"
-    echo "    -u, --update            Update this tool automatically"
-    echo "        --uninstall         Uninstall the tool"
-    echo
-    echo "Report bugs to (t.me/TrollSkull)"
-    echo
-    exit
+    username=$1
 fi
 
 function scan_username() {
