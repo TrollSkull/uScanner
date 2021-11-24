@@ -22,13 +22,8 @@ function print_banner() {
 function stop_session() {
 
     # Function to stop uScanner session with CTRL+C.
-
-    clear
-    echo -e ${B}"       ____                                           "
-    echo -e ${B}" __ __/ __/______ ____  ___  ___ ____                 " 
-    echo -e ${B}"/ // /\ \/ __/ _  / _ \/ _ \/ -_) __/                 "
-    echo -e ${B}"\_,_/___/\__/\_,_/_//_/_//_/\__/_/   ${W}v0.4-20211114"
-    echo 
+    
+    print_banner
     echo -e ${GRE}"[+] ${W}uScanner: Session closed."
     echo
 }
