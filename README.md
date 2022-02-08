@@ -7,11 +7,6 @@
 
 uScanner is a tool to find usernames on various pages throughout the entire internet, written by **[TrollSkull](https://github.com/TrollSkull)** (**[@ImTrollSkull](https://twitter.com/ImTrollSkull)**), each name found can be saved in a `.txt` file which you can move to your main device folder!
 
-
-## SCREENSHOTS
-
-<img src="/resources/uscanner-screenshot.jpg" width="500" height="250"/>
-
 ## INSTALLATION
 
 You can download uScanner on any platform by cloning the official Git repository:
