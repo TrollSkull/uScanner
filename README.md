@@ -1,7 +1,7 @@
 <p align="left">
-<img src="/resources/logo.png" width="400" height="200"/>
+<img src="/assets/logo.png" width="400" height="200"/>
 
-[![Version](https://img.shields.io/badge/Version-0.4%2020211114-blue)]()
+[![Version](https://img.shields.io/badge/Version-1.0-blue)]()
 [![Bash](https://img.shields.io/badge/Made%20with-Bash-green)]()
 [![License](https://img.shields.io/badge/License-GPL%203.0-yellow)]()
 
@@ -25,10 +25,9 @@ $ bash uscanner.sh
 
 To get a list of all options and switches use the `--help` command.
 
-    Usage: uscanner [username] or [-h] [-s] [-a]
+    Usage: uscanner [username] or [-h] [-a] [-u]
 
         -h, --help              Print this help menu
-        -s, --save              Save the .txt file in the storage
         -a, --about             Print information about this program
         -u, --update            Update this tool automatically
             --uninstall         Uninstall the tool
