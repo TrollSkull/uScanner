@@ -76,7 +76,7 @@ if [ -z "$1" ]; then
 elif [ "$1" == "--help" ]||[ "$1" == "-h" ]; then
 
     print_banner
-    echo -e ${W}"Usage: ./uscanner.sh [username] or [-h] [-s] [-a] [-u]"
+    echo -e ${W}"Usage: ./uscanner.sh [username] or [-h] [-a] [-u]"
     echo
     echo -e ${C}"    -h, --help              ${W}Print this help menu"
     echo -e ${C}"    -a, --about             ${W}Print information about this program"
