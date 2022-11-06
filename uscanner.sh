@@ -92,8 +92,10 @@ elif [ "$1" == "--update" ]||[ "$1" == "-u" ]; then
     print_banner
     echo -e ${B}"[uScanner] ${W}Updating tool..."
 
+    cd $HERE; cd ..
     rm -rf "$HERE"
-    git clone https://github.com/TrollSkull/uScanner > /dev/null 2>&1
+
+    git clone https://github.com/TrollSkull/uScanner &> /dev/null
     cd $HERE; chmod 777 uscanner.sh
 
     print_banner
@@ -113,7 +115,7 @@ elif [ "$1" == "--uninstall" ]; then
 
     print_banner
     echo -e ${B}"[uScanner] ${W}Uninstalling..."
-
+    
     rm -rf "$HERE"
 
     echo -e ${GRE}"[uScanner] ${W}The tool has been uninstalled."; exit
