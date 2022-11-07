@@ -1,6 +1,6 @@
 #!/bin/bash
 
-trap 'echo "", ctrl_c, exit 1' 2
+trap 'echo ""; ctrl_c; exit 1' 2
 source $(pwd)/lib/utils.sh; MAIN="MAIN"
 
 function print_banner() {
